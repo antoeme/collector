@@ -11,10 +11,6 @@ password = "Cisco123" or "Dtlab123"
 app = Flask(__name__)
 
 
-@app.route('/')
-def helloworld():
-    return jsonify({"about": " Helloworld !"})
-
 @app.route('/status_relays')
 def get_status():
     response_status = requests.get(GET_STATUS_RELAYS,auth=HTTPBasicAuth(username,password))
