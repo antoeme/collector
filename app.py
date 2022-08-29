@@ -20,12 +20,12 @@ load_dotenv()
 
 @app.route('/status_relays')
 def get_status():
-    response_status = requests.get(GET_STATUS_RELAYS,auth=HTTPBasicAuth(username,password))
+    response_status = requests.get(str(GET_STATUS_RELAYS),auth=HTTPBasicAuth(username,password))
     return jsonify(response_status.json())
 
 @app.route('/temps')
 def get_temps():
-    response_temps = requests.get(GET_TEMP, auth=HTTPBasicAuth(username,password))
+    response_temps = requests.get(str(GET_TEMP), auth=HTTPBasicAuth(username,password))
     print(response_temps) 
     return jsonify(response_temps.json()) #response.json è una lista, con jsonify diventa un json
 
